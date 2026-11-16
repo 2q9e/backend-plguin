@@ -170,7 +170,7 @@ async function lookup(query) {
 
   try {
     const payload = await requestOsv(query);
-    if (!payload || (payload.vulns !== undefined && !Array.isArray(payload.vulns))) {
+    if (!payload || !Array.isArray(payload.vulns)) {
       throw new Error("OSV returned an unexpected response.");
     }
 
@@ -178,8 +178,8 @@ async function lookup(query) {
       status: "checked",
       query,
       sourceUrl: OSV_QUERY_URL,
-      checkedAt,
-      advisories: (payload.vulns ?? [])
+      checkedAt: new Date().toISOString(),
+      advisories: payload.vulns
         .map((record) => normalizeAdvisory(record, query))
         .filter(Boolean)
     };
@@ -188,7 +188,7 @@ async function lookup(query) {
       status: "not_checked",
       query,
       sourceUrl: OSV_QUERY_URL,
-      checkedAt,
+      checkedAt: new Date().toISOString(),
       reason: "The public OSV lookup did not return usable metadata. No advisory conclusion can be drawn.",
       advisories: []
     };
