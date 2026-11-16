@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "backend-plugin",
+  "version": "0.1.0",
+  "description": "Evidence-led backend, VPS, application security, data protection, code quality, performance, and vulnerability intelligence workflows.",
+  "author": {
+    "name": "2q9e"
+  },
+  "keywords": [
+    "backend",
+    "security",
+    "vps",
+    "database",
+    "privacy",
+    "performance",
+    "vulnerability-management"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Backend Plugin",
+        "shortDescription": "Safer backend development",
+        "longDescription": "A skills-only plugin for reviewing and improving backend code, VPS configuration, APIs, browser-facing security, databases, privacy practices, code quality, and measured performance. Workflows use repository evidence, report coverage and uncertainty, and keep live-system or externally consequential actions reviewable.",
+        "developerName": "2q9e",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": [
+          "Review this backend project for security, privacy, database, and operational risks.",
+          "Find the measured CPU, memory, or database bottleneck and propose a safe optimization.",
+          "Check this project’s dependencies against current public vulnerability advisories if sources are available, and explain a safe fix."
+        ],
+        "brandColor": "#173B45"
+      }
+    }
+  },
+  "repository": "https://github.com/2q9e/backend-plguin"
+}

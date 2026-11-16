@@ -1,1 +1,53 @@
-# backend-plguin
+# Backend Plugin
+
+Backend Plugin is a skills-only Codex plugin package for evidence-led backend engineering. It brings together VPS posture, backend and frontend security, database and privacy practices, maintainable code, measured performance work, and public vulnerability intelligence.
+
+It is a review and development assistant, not a hosted scanner or continuous monitoring service. It works with the project files and tools available in the current Codex session, states what it inspected, and reports uncertainty. It does not claim to discover undisclosed vulnerabilities or guarantee security, performance, legal compliance, or complete coverage.
+
+## Skills
+
+| Skill | Use it for |
+|---|---|
+| `backend-review` | Route broad requests, set review scope, and combine focused workflows into one evidence-based plan. |
+| `vps-security` | Review host hardening, access, network exposure, updates, backups, and operational controls. |
+| `backend-app-security` | Review server-side trust boundaries, authentication, authorization, input handling, secrets, and API behavior. |
+| `frontend-security` | Review browser-facing code for XSS, CSRF, unsafe rendering, token exposure, and client/server trust mistakes. |
+| `database-data-security` | Review schemas, queries, privileges, transport, backups, encryption, keys, and password storage. |
+| `privacy-data-management` | Map data flows and retention, and draft Terms or Privacy Policy text from verified practices. |
+| `code-quality` | Reduce complexity and maintenance risk using observable code issues rather than guessing whether code is AI-written. |
+| `performance-optimization` | Measure CPU, memory, latency, cache, and database behavior before proposing changes. |
+| `vulnerability-intelligence` | Check current public advisories and propose scoped, reviewable remediation. |
+
+## Operating principles
+
+- Start with repository instructions, scope, framework, deployment context, and available tools.
+- Separate static code review, configuration review, dependency intelligence, and live testing. State which kinds of evidence were actually checked.
+- Report current advisory status only when current sources were actually retrieved; if search or feed access is unavailable, say that status was not checked.
+- Tie findings to exact files, settings, packages, or advisory records; include impact, confidence, evidence, and a verification step.
+- When a user requests a local repository fix, make a focused change, inspect the diff, and report only the verification performed. A local-fix request does not authorize package scripts, dependency installs/upgrades, migrations, restores, or active checks against running targets. Active checks need explicit authorization for the exact target and scope plus impact, rate, and time limits.
+- Require representative measurements before proposing a performance change. Without a baseline, give a measurement plan only. Do not optimize by intuition or report an unmeasured change as a performance improvement.
+- Never test, validate, or attempt to use discovered credentials. Require separate explicit authorization for the exact action and applicable target/environment before package-manager scripts, dependency installs/upgrades, migrations, restores, infrastructure changes, external-account writes, or third-party disclosure.
+- Use established cryptography and password-hashing libraries. Keep keys under a separate access boundary from encrypted data; never expose secrets in findings or logs.
+- Draft factual privacy and Terms language from verified data practices. Make jurisdiction-specific legal claims only when the relevant jurisdictions are known; use explicit placeholders for missing facts and mark them for qualified review. Do not invent legal obligations or promise legal sufficiency.
+- For vulnerability reports, distinguish disclosure, upstream fix availability, project-version status, credible proof-of-concept reporting, and confirmed exploitation. Cite code-free credible reporting of PoC existence without linking to, retrieving, copying, or reproducing exploit or PoC code. “No public match” is not proof of safety or zero-day detection.
+
+## Package layout
+
+```text
+plugin.json
+README.md
+research/                 # Research notes and source catalog
+references/               # Shared finding and action contracts
+skills/<workflow>/SKILL.md
+evaluations/scenarios.md    # Planned manual evaluation; not yet run
+prompts/                    # Build prompt and goal for future model handoff
+```
+
+## Model handoff
+
+- [Main build prompt](prompts/BUILD_PLUGIN_PROMPT.md)
+- [Goal](prompts/GOAL.md)
+
+The package source is committed in this GitHub repository. It has not been installed into a Codex host or published to a plugin directory. This repository uses the source-available view-only terms in [LICENSE](LICENSE) (SAVL-1.0); it is not an open-source license.
+
+The proposed manual routing and safety scenarios are listed in [`evaluations/scenarios.md`](evaluations/scenarios.md). They have not been run; static checks covered the portable manifest schema, skill frontmatter and name uniqueness, local Markdown links, and package layout. Installed-host behavior remains unevaluated.
