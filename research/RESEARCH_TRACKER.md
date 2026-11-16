@@ -1,20 +1,37 @@
 # All-in-One Backend Plugin — Research Tracker
 
 **Last updated:** 2026-11-16  
-**Status:** Research pass and independent audit correction pass complete; the skills-only package is implemented from these findings and committed to `2q9e/backend-plguin` on `main`. It has not been installed into a Codex host or published to a plugin directory. All manual scenarios remain unrun; host behavior is unevaluated. Future platform and product-scope decisions remain open.  
-**Scope:** This folder records the research and evidence base. The sibling `../plugin.json`, `../skills/`, `../references/`, `../evaluations/`, `../prompts/`, and `../README.md` contain the skills-only portable plugin package and its handoff/evaluation documents. Package source is committed at [2q9e/backend-plguin](https://github.com/2q9e/backend-plguin). No hosted service, scanner engine, MCP server, or continuous monitoring system has been implemented.
+**Status:** Research pass and independent audit correction pass complete; the package now contains nine skills plus a local stdio MCP server for read-only OSV lookups and is committed to `2q9e/backend-plguin` on `main`. Dependencies and the plugin have not been installed; all manual scenarios remain unrun, and host behavior is unevaluated. Future platform and product-scope decisions remain open.  
+**Scope:** This folder records the research and evidence base. The sibling `../plugin.json`, `../mcp.json`, `../package.json`, `../server/`, `../skills/`, `../references/`, `../evaluations/`, `../prompts/`, and `../README.md` contain the portable plugin package and its handoff/evaluation documents. Package source is committed at [2q9e/backend-plguin](https://github.com/2q9e/backend-plguin). A local OSV MCP server is implemented; no hosted service, scanner engine, or continuous monitoring system is provided.
 
 ## Package implementation and static validation
 
-The package includes a portable root manifest, README, nine focused `SKILL.md` workflows, a shared finding/action contract, and manual evaluation scenarios. It remains skills-only and has no bundled tools/server, product backend, scanner engine, or continuous monitoring. The package source is committed to the repository on `main`; it has not been installed or published.
+The package includes a portable root manifest, a local `mcp.json` stdio configuration, a local `server/index.mjs` MCP server, exact direct runtime dependencies in `package.json`, README, nine focused `SKILL.md` workflows, a shared finding/action contract, and manual evaluation scenarios. Its single `query_package_advisories` tool submits one exact public ecosystem/package/version to OSV and returns whitelisted IDs, source URLs, timestamps, matching affected-range events, and fixed-version fields. It omits advisory prose and reference lists; failed or incomplete OSV responses return `not_checked`. This is an aggregator lookup, not a comprehensive advisory review or fixed-version recommendation. The server is local and read-only; it does not provide a hosted service, product backend, scanner engine, or continuous monitoring. Runtime dependencies are not installed, and the plugin remains uninstalled and unpublished.
 
 Static checks performed on 2026-11-16:
-- Parsed `plugin.json` and checked it against the constraints in its referenced Agent Plugins 1.0.0 schema.
-- Parsed the nine skill frontmatter blocks and confirmed required `name`/`description` fields and unique names.
-- Resolved local Markdown links and reviewed the required package layout.
-- Confirmed all manual evaluation rows remain unrun. Installed-host behavior was not evaluated.
+- Parsed `plugin.json`, `mcp.json`, and `package.json`; checked the portable plugin and stdio MCP configuration against the retrieved Agent Plugins 1.0.0 schema constraints. The environment did not include a JSON Schema validator package, so a local checker evaluated the applicable schema constraints directly.
+- Parsed all nine skill frontmatter blocks and confirmed required `name`/`description` fields and unique names.
+- Resolved local Markdown links across all 20 Markdown files and reviewed the package layout.
+- Ran `node --check` on a temporary copy of `server/index.mjs`; this checked syntax only and did not execute the server.
+- Confirmed all 16 manual evaluation scenarios remain unrun. Installed-host behavior was not evaluated.
 
-The environment did not include a JSON Schema validator package, so a small local checker enforced each constraint declared by the retrieved schema; no dependencies were installed.
+No dependencies were installed, the MCP server was not launched, and the OSV API was not queried during validation.
+
+## Implementation source notes
+
+OpenAI's package guidance documents portable MCP configuration in root `mcp.json`; its desktop-only guidance documents local stdio launch entries and the local-executor flag (OpenAI, 2026a, 2026b). The MCP TypeScript SDK documents the current server and stdio APIs and requires Node.js 20 or later (Model Context Protocol, 2026a, 2026b). OSV documents package-version queries through its public API (OSV, n.d.). These sources support the package wiring and lookup protocol; they do not establish installed-host behavior, comprehensive advisory coverage, or source agreement on a fixed version.
+
+### References
+
+Model Context Protocol. (2026a). *Serve over stdio*. TypeScript SDK. https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/serving/stdio.md
+
+Model Context Protocol. (2026b). *Server package manifest*. TypeScript SDK. https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/packages/server/package.json
+
+OpenAI. (2026a). *Package your plugin*. OpenAI Developers. https://developers.openai.com/plugins/build/plugins
+
+OpenAI. (2026b). *Submit desktop-only plugins*. OpenAI Developers. https://developers.openai.com/plugins/deploy/desktop-only
+
+OSV. (n.d.). *API*. OSV. https://google.github.io/osv.dev/api/
 
 ## Research files
 
@@ -58,7 +75,7 @@ These choices are not inferable from public documentation and are left for produ
 - First target users and project sizes.
 - Supported languages, frameworks, databases, VPS operating systems, and hosting environments.
 - Whether future versions should only inspect/explain/propose, or also apply approved changes, monitor, or operate infrastructure.
-- Whether to add optional remote MCP integrations, external data feeds, or scanner integrations beyond the current local skills-only package.
+- Which optional remote MCP integrations, external data feeds, or scanner integrations should be added beyond the current local OSV lookup.
 - Jurisdictions to support for Terms of Use and Privacy Policy drafting.
 
 ## Research log and evidence provenance
