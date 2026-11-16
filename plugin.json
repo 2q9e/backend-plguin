@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "backend-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Evidence-led backend, VPS, application security, data protection, code quality, performance, and vulnerability intelligence workflows.",
   "author": {
     "name": "2q9e"
@@ -20,7 +20,7 @@
       "interface": {
         "displayName": "Backend Plugin",
         "shortDescription": "Safer backend development",
-        "longDescription": "A skills-only plugin for reviewing and improving backend code, VPS configuration, APIs, browser-facing security, databases, privacy practices, code quality, and measured performance. Workflows use repository evidence, report coverage and uncertainty, and keep live-system or externally consequential actions reviewable.",
+        "longDescription": "A local plugin with nine evidence-led workflows and a read-only MCP tool that checks exact public package versions against OSV. It reviews backend code, VPS configuration, application and browser security, databases, privacy, code quality, measured performance, and public vulnerability intelligence. The OSV tool sends public package coordinates to OSV and returns whitelisted advisory metadata. The plugin does not monitor continuously or operate live systems.",
         "developerName": "2q9e",
         "category": "Developer Tools",
         "capabilities": [],
@@ -30,7 +30,8 @@
           "Check this project’s dependencies against current public vulnerability advisories if sources are available, and explain a safe fix."
         ],
         "brandColor": "#173B45"
-      }
+      },
+      "requires_local_executor": true
     }
   },
   "repository": "https://github.com/2q9e/backend-plguin"

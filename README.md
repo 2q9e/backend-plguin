@@ -1,8 +1,16 @@
 # Backend Plugin
 
-Backend Plugin is a skills-only Codex plugin package for evidence-led backend engineering. It brings together VPS posture, backend and frontend security, database and privacy practices, maintainable code, measured performance work, and public vulnerability intelligence.
+Backend Plugin is a Codex plugin package for evidence-led backend engineering. It combines nine focused workflow skills with a local, read-only MCP tool for exact-version public advisory lookups. It covers VPS posture, backend and frontend security, database and privacy practices, maintainable code, measured performance work, and public vulnerability intelligence.
 
 It is a review and development assistant, not a hosted scanner or continuous monitoring service. It works with the project files and tools available in the current Codex session, states what it inspected, and reports uncertainty. It does not claim to discover undisclosed vulnerabilities or guarantee security, performance, legal compliance, or complete coverage.
+
+## MCP tool
+
+The local stdio MCP server exposes one tool: `query_package_advisories`. It sends an exact ecosystem, public package name, and resolved version to OSV's public [version query API](https://google.github.io/osv.dev/api/). Do not submit private package identifiers, secrets, or personal data.
+
+The tool returns only OSV identifiers, source-record URLs, publication/update/withdrawal timestamps, affected-range events for the queried package, fixed-version metadata, and the check time. It omits advisory prose, details, and reference lists. Treat results as an aggregator signal: confirm applicability and any proposed fix with the package maintainer or vendor. A failed or unusable source response is marked `not_checked`; it does not mean the package is safe or has no advisory.
+
+The server requires Node.js 20 or later and the exact runtime dependencies declared in the root `package.json`. This repository change does not install dependencies, launch the server, or install the plugin in a Codex host. The stdio configuration requires local execution and is intended for local use; no hosted service or public endpoint is provided.
 
 ## Skills
 
@@ -35,12 +43,15 @@ It is a review and development assistant, not a hosted scanner or continuous mon
 
 ```text
 plugin.json
+mcp.json                    # Local stdio MCP server configuration
+package.json                # Pinned local MCP runtime dependencies
+server/index.mjs            # Read-only OSV lookup tool
 README.md
-research/                 # Research notes and source catalog
-references/               # Shared finding and action contracts
+research/                   # Research notes and source catalog
+references/                 # Shared finding and action contracts
 skills/<workflow>/SKILL.md
-evaluations/scenarios.md    # Planned manual evaluation; not yet run
-prompts/                    # Build prompt and goal for future model handoff
+evaluations/scenarios.md     # Planned manual evaluation; not yet run
+prompts/                     # Build prompt and goal for future model handoff
 ```
 
 ## Model handoff
@@ -48,6 +59,6 @@ prompts/                    # Build prompt and goal for future model handoff
 - [Main build prompt](prompts/BUILD_PLUGIN_PROMPT.md)
 - [Goal](prompts/GOAL.md)
 
-The package source is committed in this GitHub repository. It has not been installed into a Codex host or published to a plugin directory. This repository uses the source-available view-only terms in [LICENSE](LICENSE) (SAVL-1.0); it is not an open-source license.
+The package source is committed in this GitHub repository. It has not been installed into a Codex host, its MCP dependencies have not been installed, and it has not been published. The local MCP server needs Node.js 20+ and the dependencies declared in `package.json` before a Codex host can launch it. This repository uses the source-available view-only terms in [LICENSE](LICENSE) (SAVL-1.0); it is not an open-source license.
 
-The proposed manual routing and safety scenarios are listed in [`evaluations/scenarios.md`](evaluations/scenarios.md). They have not been run; static checks covered the portable manifest schema, skill frontmatter and name uniqueness, local Markdown links, and package layout. Installed-host behavior remains unevaluated.
+The manual routing, MCP, and safety scenarios are listed in [`evaluations/scenarios.md`](evaluations/scenarios.md). They have not been run; package-format and static checks are recorded in `research/RESEARCH_TRACKER.md`. Installed-host behavior remains unevaluated.
