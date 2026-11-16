@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See ../LICENSE for terms. -->
+
 # Goal
 
 Build and audit a local, ready-to-review Codex plugin at `/home/2q9e/Projects/Plugins/backend-plugin/` from all six research documents. Cover VPS/host, backend/API, and frontend/browser security; observable code quality and organization; measured CPU/RAM/cache/latency/database optimization; database development and security, encryption and key separation, and salted adaptive password hashing; data inventory/lifecycle and fact-grounded Terms of Use and Privacy Policy drafts; and current public vulnerability intelligence with defensive, reviewable remediation. Preserve the research, avoid exploit development and unsupported continuous-monitoring or zero-day claims, and follow the main prompt at `/home/2q9e/Projects/Plugins/backend-plugin/prompts/BUILD_PLUGIN_PROMPT.md` (also linked here: [main prompt](BUILD_PLUGIN_PROMPT.md)), including its safety rules.

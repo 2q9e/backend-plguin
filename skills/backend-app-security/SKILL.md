@@ -2,6 +2,7 @@
 name: backend-app-security
 description: "Review backend services and APIs for application security issues in source code, configuration, and dependencies."
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Backend application security review
 

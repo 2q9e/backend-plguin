@@ -2,6 +2,7 @@
 name: performance-optimization
 description: Use when diagnosing or improving CPU, RAM, latency, cache, database, throughput, or resource-cost behavior.
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Workload-based performance optimization
 

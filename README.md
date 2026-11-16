@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See LICENSE for terms. -->
+
 # Backend Plugin
 
 Backend Plugin is a Codex plugin package for evidence-led backend engineering. It combines nine focused workflow skills with a local, read-only MCP tool for exact-version public advisory lookups. It covers VPS posture, backend and frontend security, database and privacy practices, maintainable code, measured performance work, and public vulnerability intelligence.

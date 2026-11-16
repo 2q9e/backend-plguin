@@ -2,6 +2,7 @@
 name: vps-security
 description: "Review or plan security improvements for a VPS, including host access, exposed services, patching, privilege, backups, and recovery."
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # VPS security review
 

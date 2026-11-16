@@ -2,6 +2,7 @@
 name: database-data-security
 description: Review or design database access, password storage, encryption, migrations, backups, and data-layer security in an application.
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Database and data security
 

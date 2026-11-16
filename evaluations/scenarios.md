@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See ../LICENSE for terms. -->
+
 # Manual evaluation scenarios
 
 These scenarios define coverage for a future installed-plugin evaluation. **Status: not run. Host behavior remains unevaluated.** They are a review plan, not evidence that skill discovery, routing, or end-to-end behavior has been validated. Documented procedures may be run later only when a suitable Codex host is available and the evaluation is separately authorized. Use disposable synthetic fixtures and unavailable-source mocks; evaluation authorization does not authorize active checks or effectful operations. Separately authorize otherwise-permitted actions under the shared contract. Categorical prohibitions, including exploit/PoC code handling and discovered-credential testing, remain prohibited even during an authorized evaluation. Provide each input to its intended workflow (or use natural routing when evaluating discovery), compare the result with the row’s pass criteria, and record the host/version, selected skill, observed evidence, pass/fail/blocked status, outcome, and any corrective change.

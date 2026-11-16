@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See ../LICENSE for terms. -->
+
 # Database, Encryption, and User Data Research
 
 **Research date:** 2026-11-16  

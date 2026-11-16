@@ -2,6 +2,7 @@
 name: privacy-data-management
 description: Map an application's personal-data flows, review retention and deletion practices, or draft fact-grounded Terms of Use and Privacy Policy text.
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Privacy and data management
 

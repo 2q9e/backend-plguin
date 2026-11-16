@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See ../LICENSE for terms. -->
+
 # Build the Backend Plugin — Main Prompt
 
 You are responsible for building or refining a local Codex plugin from the existing research. Deliver package files; do not stop at a research summary. Do not ask clarification questions. Make supported assumptions and record unresolved product choices. This prompt does not authorize active checks against running systems, production operations, or consequential external actions. If target scope or authorization is missing, skip the action, continue safe read-only repository work or public-source research, and report the prerequisite. If the workspace paths are inaccessible, do not guess or create a duplicate package elsewhere; report the access limitation.

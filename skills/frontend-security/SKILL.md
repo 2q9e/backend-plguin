@@ -2,6 +2,7 @@
 name: frontend-security
 description: "Review browser-facing application code and policies for XSS, CSRF, unsafe content loading, and client-side data risks."
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Frontend and browser security review
 

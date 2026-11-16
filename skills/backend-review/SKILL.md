@@ -2,6 +2,7 @@
 name: backend-review
 description: Use when the user asks for a broad backend development, security, database, privacy, VPS, maintainability, or performance review, or when a request spans several of those areas.
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Backend review router
 

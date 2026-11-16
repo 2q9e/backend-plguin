@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See ../LICENSE for terms. -->
+
 # All-in-One Backend Plugin — Research Tracker
 
 **Last updated:** 2026-11-16  

@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See ../LICENSE for terms. -->
+
 # Finding and action contract
 
 Use this shared format for reviews, plans, and remediation proposals. Leave a field out only when it does not apply.

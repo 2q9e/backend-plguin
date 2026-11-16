@@ -2,6 +2,7 @@
 name: code-quality
 description: Use when reviewing or improving concrete maintainability, organization, or code-quality problems in a repository.
 ---
+<!-- Copyright (c) 2026 2q9e. See ../../LICENSE for terms. -->
 
 # Code quality and maintainability
 
