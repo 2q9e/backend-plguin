@@ -2,7 +2,7 @@
 
 # Backend Plugin
 
-Backend Plugin is a Codex plugin package for evidence-led backend engineering. It combines nine focused workflow skills with a local, read-only MCP tool for exact-version public advisory lookups. It covers VPS posture, backend and frontend security, database and privacy practices, maintainable code, measured performance work, and public vulnerability intelligence.
+Backend Plugin gives Codex a set of workflows for reviewing server-side code, deployment posture, database and privacy practices, and performance. Its local MCP server queries OSV for public advisories against an exact package version.
 
 It is a review and development assistant, not a hosted scanner or continuous monitoring service. It works with the project files and tools available in the current Codex session, states what it inspected, and reports uncertainty. It does not claim to discover undisclosed vulnerabilities or guarantee security, performance, legal compliance, or complete coverage.
 
